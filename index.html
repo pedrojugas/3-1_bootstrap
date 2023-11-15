@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 5 Example</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.15.0/font/bootstrap-icons.css">
-
-  
-</head>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
 </head>
 
 <style>
 
-  #context{
+  #CEcontext{
     margin: auto;
     width: 80%;
   }
@@ -29,83 +25,89 @@
     border-radius: 20px;
   }
 
+
+  .modal{
+    width: 25%;
+    margin-left: 37.5%;
+  }
+
 </style>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">E-Commerce</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">E-Commerce</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Products</a>
+        </li>
+
+        <li>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button type="button">
+            </form>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#addProduct">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+        Add Product
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Products</a>
-          </li>
-  
-          <li>
-              <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button type="button">
-              </form>
-          </li>
-        </ul>
-        <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#addProduct">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-          </svg>
-          Add Product
-        </button>
-  
-        <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add a Product</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add a Product</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <input class="form-control" id="exampleFormControlInput1" placeholder="Product Name">
+              </div> 
+              <div class="input-group mb-3">
+                <span class="input-group-text">Descriptions</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
               </div>
-              <div class="modal-body">
-                <div class="mb-3">
-                  <input class="form-control" id="exampleFormControlInput1" placeholder="Product Name">
-                </div> 
-                <div class="input-group mb-3">
-                  <span class="input-group-text">Descriptions</span>
-                  <textarea class="form-control" aria-label="With textarea"></textarea>
-                </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text">$</span>
-                  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  <span class="input-group-text">.00</span>
-                </div>
-                <div class="mb-3">
-                  <label for="formFile" class="form-label">Product Image</label>
-                  <input class="form-control" type="file" id="formFile">
-                </div>
-  
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save changes</button>
+              <div class="mb-3">
+                <label for="formFile" class="form-label">Product Image</label>
+                <input class="form-control" type="file" id="formFile">
               </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Save changes</button>
             </div>
           </div>
         </div>
-  
-        <button type="button" class="btn btn-primary m-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
-            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
-          </svg>
-          Cart
-        </button>
-    
       </div>
+
+      <button type="button" class="btn btn-primary m-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+          <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+        </svg>
+        Cart
+      </button>
+  
     </div>
-    </nav>
+  </div>
+  </nav>
 <!-------------------------------- LOGIN & REGISTRATION --------------------------------
----------------------------------- LOGIN & REGISTRATION --------------------------------
----------------------------------- LOGIN & REGISTRATION --------------------------------
----------------------------------- LOGIN & REGISTRATION --------------------------------
+---------------------------------- LOGIN C REGISTRATION --------------------------------
+---------------------------------- LOGIN E REGISTRATION --------------------------------
+---------------------------------- LOGIN & REGISTRATION -------------------------------->
 
 
   <form class="m-4">
@@ -140,51 +142,54 @@
           </div>
           <div class="modal-body">
             
-              <input type="email" class="form-control mt-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
-              <input type="name" class="form-control mt-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
-              <input type="password" class="form-control mt-3" id="exampleInputPassword1" placeholder="Password">
-              <input type="password" class="form-control mt-3" id="exampleInputPassword1" placeholder="Confirm Password">
+              <input type="email" class="form-control mt-3" id="txtRegisterEmail" aria-describedby="emailHelp" placeholder="Email address">
+              <input type="name" class="form-control mt-3" id="txtRegisterName" aria-describedby="emailHelp" placeholder="Name">
+              <input type="password" class="form-control mt-3" id="txtRegisterPassword" placeholder="Password">
+              <input type="password" class="form-control mt-3" id="txtRegisterConfirmPassword" placeholder=" Confirm Password">
 
-              <div class="row mt-3">
-                  <div class="col form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                      <label class="form-check-label" for="flexRadioDefault1">
-                          Rather not to say
-                      </label>
+              <div class="container mt-3">
+                <div class="mt-2 row">
+       
+                  <div class="form-check col-4">
+
+                    <label class="form-label">Gender</label>
+                    <div class="row">
+                        <div class="col-ms-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioMale" value="Male">
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                            </div>
+                        </div>
+                        <div class="col-ms-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioFemale" value="Female">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                            </div>
+                        </div>
+                    </div>
+
+
                   </div>
-                  <div class="col form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                          Male
-                      </label>
-                  </div>
-                  <div class="col form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                          Female
-                      </label>
-                  </div>
+                </div>
               </div>
-                  <select class="form-select mt-3" aria-label="Defaul select example">
+
+
+                  <select class="form-select mt-3" id="selectRegisterYearLevel" aria-label="Defaul select example">
                       <option selected>Year Level</option>
                       <option value="1">1st Year</option>
                       <option value="2">2nd Year</option>
                       <option value="3">3rd Year</option>
                       <option value="4">4th Year</option>
                   </select>
-        
 
+              <input type="address" class="form-control mt-3" id="txtRegisterAddress" placeholder="Address">
 
-              <input type="year" class="form-control mt-3" id="exampleInputPassword1" placeholder="">
-
-              <input type="address" class="form-control mt-3" id="exampleInputPassword1" placeholder="Address">
-
-              <input type="date" class="form-control mt-3" id="exampleInputPassword1" placeholder="mm/dd/yy">
+              <input type="date" class="form-control mt-3" id="txtRegisterBirthdate" placeholder="mm/dd/yy">
 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-light border-warning" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-light border-success">Register</button>
+            <button type="button" id="btnRegister" class="btn btn-light border-success">Register</button>
           </div>
         </div>
       </div>
@@ -194,88 +199,14 @@
 
   </form>  
 
----------------------------------- LOGIN & REGISTRATION --------------------------------
----------------------------------- LOGIN & REGISTRATION --------------------------------
----------------------------------- LOGIN & REGISTRATION --------------------------------
+<!--------------------------------- LOGIN & REGISTRATION --------------------------------
+---------------------------------- LOGIN C REGISTRATION --------------------------------
+---------------------------------- LOGIN E REGISTRATION --------------------------------
 ---------------------------------- LOGIN & REGISTRATION ------------------------------->  
 
 
-<!--------------------------------------- CONTEXT --------------------------------------  
------------------------------------------ CONTEXT --------------------------------------
------------------------------------------ CONTEXT --------------------------------------
------------------------------------------ CONTEXT --------------------------------------
------------------------------------------ CONTEXT --------------------------------------->
 
 
-
-  <div class="container-fluid" id="context">
-    <div class="row row-cols-auto">
-        <div class="card">
-          
-          <img class="card-img-top mt-3" src="images/11.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Clogs</h5>
-            <p class="card-text"><p class="fw-bold">Color:</p>Black/ Grey / Red / Brown / White /Beige</p>
-            <p class="card-text"><p class="fw-bold">Size:</p>3-3.5/4-4.5/5-5.5/6-6.5 / 7-7.5 / 8-8.5 / 9-9.5 / 10-10.5/ 11-11.5</p>
-            <p class="fw-bold">Price</p>
-            <p class="bg-dark text-light text-center w-25 rounded">₱7,495</p>
-            <button class="btn border-success text-success" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
-              Add To Cart</button>
-            <button class="btn border-primary text-primary" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="card">
-          
-          <img class="card-img-top mt-3" src="images/22.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Arizona</h5>
-            <p class="card-text"><p class="fw-bold">Color:</p>Black/ Grey / Red / Brown / White /Beige</p>
-            <p class="card-text"><p class="fw-bold">Size:</p>3-3.5/4-4.5/5-5.5/6-6.5 / 7-7.5 / 8-8.5 / 9-9.5 / 10-10.5/ 11-11.5</p>
-            <p class="fw-bold">Price</p>
-            <p class="bg-dark text-light text-center w-25 rounded">₱5,495</p>
-            <button class="btn border-success text-success" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
-              Add To Cart</button>
-            <button class="btn border-primary text-primary" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="card">
-          
-          <img class="card-img-top mt-3" src="images/33.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Arizona Essentials</h5>
-            <p class="card-text"><p class="fw-bold">Color:</p>Black/ Grey / Red / Brown / White /Beige</p>
-            <p class="card-text"><p class="fw-bold">Size:</p>3-3.5/4-4.5/5-5.5/6-6.5 / 7-7.5 / 8-8.5 / 9-9.5 / 10-10.5/ 11-11.5</p>
-            <p class="fw-bold">Price</p>
-            <p class="bg-dark text-light text-center w-25 rounded">₱3,995</p>
-            <button class="btn border-success text-success" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
-              Add To Cart
-            </button>
-            <button class="btn border-primary text-primary" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-              </svg>
-            </button>
-          </div>
-        </div>
 
     </div>
 
@@ -283,8 +214,13 @@
 
   
 
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+
+<footer>
+  <script src="./index.js">
+    console.log("Hello World from index.html");
+  </script>
+</footer>
+
+</html>.
